@@ -1,0 +1,2193 @@
+
+		<!DOCTYPE html>
+		<html>
+			<head>
+				<meta charset="utf-8" />
+				<title>Report of liferay-npm-bundler execution</title>
+				<style>
+					body, h1, h2, h3, p, li {
+						font-family: sans-serif;
+					}
+					
+					body, p, th, td, li {
+						font-size: 10pt;
+					}
+					
+					h1 {
+						font-size: 16pt;
+						margin: 1em 0 .5em 0;
+					}
+					
+					h2 {
+						font-size: 13pt;
+						margin: 1em 0 .5em 0;
+					}
+					
+					h3 {
+						font-size: 11pt;
+						margin: 1em 0 .5em 0;
+					}
+					
+					table {
+						margin: 0 0 .5em 0;
+					}
+					
+					tr:nth-child(odd) {
+						background-color: #F6F6F6;
+					}
+					
+					th {
+						background-color: #F0F0F0;
+						text-align: left;
+					}
+					
+					th, td {
+						padding: .1em 0;
+						vertical-align: top;
+					}
+					
+					td.info, td.warn, td.error {
+						background: green;
+						border-radius: 4px;
+						color: white;
+						text-align: center;
+						vertical-align: middle;
+						width: 1px;
+						white-space: nowrap;
+					}
+
+					td.warn {
+						background: orange;
+					}
+
+					td.error {
+						background: red;
+					}
+					
+					td.source {
+						white-space: nowrap;
+					}
+
+					ul {
+						padding-left: 1em;
+						margin: 0 0 .5em 0;
+					}
+					
+					p {
+						margin: 0 0 .5em 0;
+					}
+
+					a {
+						text-decoration: none;
+						color: #055;
+					}
+
+					#log-level-selector {
+						position: fixed;
+						top: 1em;
+						right: 1em;
+						background-color: #eee;
+						padding: .3em;
+						border-radius: 4px;
+						font-size: 8pt;
+						border: 1px solid #ccc;
+					}
+
+					#log-level-selector select {
+						font-size: 8pt;
+					}
+
+					.configuration {
+						display: inline-block;
+						margin-bottom: .5em;
+					}
+
+					.configuration > div {
+						background-color: #f0f0f0;
+						cursor: pointer;
+						border-radius: 4px;
+						padding: 2px;
+						display: inline;
+					}
+
+					.configuration > div:after {
+						content: "👀";
+						padding: 0 .5em;
+					}
+
+					.configuration > pre {
+						font-size: 8pt;
+						display: none;
+					}
+
+					.configuration:hover > pre {
+						display: block;
+					}
+				</style>
+				<script id="report" type="application/json">
+					{"_executionDate":"2019-11-29T15:51:17.615Z","_versionsInfo":{"liferay-npm-bundler":{"version":"2.16.0","path":"node_modules/liferay-npm-bundler"},"liferay-npm-build-tools-common":{"version":"2.16.0","path":"node_modules/liferay-npm-build-tools-common"},"liferay-npm-bundler-plugin-resolve-linked-dependencies":{"version":"2.16.0","path":"node_modules/liferay-npm-bundler-plugin-resolve-linked-dependencies"},"liferay-npm-bundler-plugin-namespace-packages":{"version":"2.16.0","path":"node_modules/liferay-npm-bundler-plugin-namespace-packages"},"liferay-npm-bundler-plugin-inject-imports-dependencies":{"version":"2.16.0","path":"node_modules/liferay-npm-bundler-plugin-inject-imports-dependencies"},"babel-preset-liferay-standard":{"version":"2.16.0","path":"node_modules/babel-preset-liferay-standard"},"liferay-npm-bundler-plugin-replace-browser-modules":{"version":"2.16.0","path":"node_modules/liferay-npm-bundler-plugin-replace-browser-modules"},"liferay-npm-bundler-plugin-inject-peer-dependencies":{"version":"2.16.0","path":"node_modules/liferay-npm-bundler-plugin-inject-peer-dependencies"}},"_packages":{"/":{"id":"/","process":{"copy":{},"pre":{"resolve-linked-dependencies":{"plugin":{"name":"resolve-linked-dependencies","config":{}},"logger":{"_msgs":[]}}},"babel":{"config":{"presets":["liferay-standard"],"babelrc":false,"compact":false,"only":"**/*","sourceMaps":true},"files":{"AppComponent.js":{"logger":{"_msgs":[{"source":"add-module-metadata","level":"info","things":["Added 'esModule' flag"]},{"source":"normalize-requires","level":"info","things":["Normalized",5,"requires"]},{"source":"wrap-modules-amd","level":"info","things":["Detected dependencies: 'klabin-sso-security-report$react', 'klabin-sso-security-report$react-dom', './client', '@klabin-sso-security-report$apollo/react-hooks', './ksso-form/components/KSSOController'"]},{"source":"name-amd-modules","level":"info","things":["Set module name to 'klabin-sso-security-report@1.0.0/AppComponent'"]},{"source":"namespace-modules","level":"info","things":["Namespaced",0,"define() names,",0,"define() dependencies,","and",3,"require() names"]}]}},"client.js":{"logger":{"_msgs":[{"source":"add-module-metadata","level":"info","things":["Added 'esModule' flag"]},{"source":"normalize-requires","level":"info","things":["Normalized",3,"requires"]},{"source":"wrap-modules-amd","level":"info","things":["Detected dependencies: 'klabin-sso-security-report$apollo-boost', 'klabin-sso-security-report$apollo-link-context', 'klabin-sso-security-report$apollo-link-http'"]},{"source":"name-amd-modules","level":"info","things":["Set module name to 'klabin-sso-security-report@1.0.0/client'"]},{"source":"namespace-modules","level":"info","things":["Namespaced",0,"define() names,",0,"define() dependencies,","and",3,"require() names"]}]}},"index.js":{"logger":{"_msgs":[{"source":"add-module-metadata","level":"info","things":["Added 'esModule' flag"]},{"source":"normalize-requires","level":"info","things":["Normalized",3,"requires"]},{"source":"wrap-modules-amd","level":"info","things":["Detected dependencies: 'klabin-sso-security-report$react', 'klabin-sso-security-report$react-dom', './AppComponent'"]},{"source":"name-amd-modules","level":"info","things":["Set module name to 'klabin-sso-security-report@1.0.0/index'"]},{"source":"namespace-modules","level":"info","things":["Namespaced",0,"define() names,",0,"define() dependencies,","and",2,"require() names"]}]}},"ksso-form/components/KSSOContentForm.js":{"logger":{"_msgs":[{"source":"add-module-metadata","level":"info","things":["Added 'esModule' flag"]},{"source":"normalize-requires","level":"info","things":["Normalized",4,"requires"]},{"source":"wrap-modules-amd","level":"info","things":["Detected dependencies: 'klabin-sso-security-report$react', 'klabin-sso-security-report$react-apollo', './KSSOFormField', '../queries/KSSOFormMutations'"]},{"source":"name-amd-modules","level":"info","things":["Set module name to 'klabin-sso-security-report@1.0.0/ksso-form/components/KSSOContentForm'"]},{"source":"namespace-modules","level":"info","things":["Namespaced",0,"define() names,",0,"define() dependencies,","and",2,"require() names"]}]}},"ksso-form/components/KSSOController.js":{"logger":{"_msgs":[{"source":"add-module-metadata","level":"info","things":["Added 'esModule' flag"]},{"source":"normalize-requires","level":"info","things":["Normalized",5,"requires"]},{"source":"wrap-modules-amd","level":"info","things":["Detected dependencies: 'klabin-sso-security-report$react', '@klabin-sso-security-report$apollo/react-hooks', './KSSOContentForm', './KSSOStructureSelector', '../queries/KSSOFormQueries'"]},{"source":"name-amd-modules","level":"info","things":["Set module name to 'klabin-sso-security-report@1.0.0/ksso-form/components/KSSOController'"]},{"source":"namespace-modules","level":"info","things":["Namespaced",0,"define() names,",0,"define() dependencies,","and",2,"require() names"]}]}},"ksso-form/components/KSSOStructureSelector.js":{"logger":{"_msgs":[{"source":"add-module-metadata","level":"info","things":["Added 'esModule' flag"]},{"source":"normalize-requires","level":"info","things":["Normalized",1,"requires"]},{"source":"wrap-modules-amd","level":"info","things":["Detected dependencies: 'klabin-sso-security-report$react'"]},{"source":"name-amd-modules","level":"info","things":["Set module name to 'klabin-sso-security-report@1.0.0/ksso-form/components/KSSOStructureSelector'"]},{"source":"namespace-modules","level":"info","things":["Namespaced",0,"define() names,",0,"define() dependencies,","and",1,"require() names"]}]}},"ksso-form/components/KSSOFormField.js":{"logger":{"_msgs":[{"source":"add-module-metadata","level":"info","things":["Added 'esModule' flag"]},{"source":"normalize-requires","level":"info","things":["Normalized",1,"requires"]},{"source":"wrap-modules-amd","level":"info","things":["Detected dependencies: 'klabin-sso-security-report$react'"]},{"source":"name-amd-modules","level":"info","things":["Set module name to 'klabin-sso-security-report@1.0.0/ksso-form/components/KSSOFormField'"]},{"source":"namespace-modules","level":"info","things":["Namespaced",0,"define() names,",0,"define() dependencies,","and",1,"require() names"]}]}},"ksso-form/queries/KSSOFormQueries.js":{"logger":{"_msgs":[{"source":"add-module-metadata","level":"info","things":["Added 'esModule' flag"]},{"source":"normalize-requires","level":"info","things":["Normalized",1,"requires"]},{"source":"wrap-modules-amd","level":"info","things":["Detected dependencies: 'klabin-sso-security-report$graphql-tag'"]},{"source":"name-amd-modules","level":"info","things":["Set module name to 'klabin-sso-security-report@1.0.0/ksso-form/queries/KSSOFormQueries'"]},{"source":"namespace-modules","level":"info","things":["Namespaced",0,"define() names,",0,"define() dependencies,","and",1,"require() names"]}]}},"ksso-form/queries/KSSOFormMutations.js":{"logger":{"_msgs":[{"source":"add-module-metadata","level":"info","things":["Added 'esModule' flag"]},{"source":"normalize-requires","level":"info","things":["Normalized",1,"requires"]},{"source":"wrap-modules-amd","level":"info","things":["Detected dependencies: 'klabin-sso-security-report$graphql-tag'"]},{"source":"name-amd-modules","level":"info","things":["Set module name to 'klabin-sso-security-report@1.0.0/ksso-form/queries/KSSOFormMutations'"]},{"source":"namespace-modules","level":"info","things":["Namespaced",0,"define() names,",0,"define() dependencies,","and",1,"require() names"]}]}}}},"post":{"namespace-packages":{"plugin":{"name":"namespace-packages","config":{}},"logger":{"_msgs":[{"source":"namespace-packages","level":"info","things":["Namespaced",12,"dependencies"]}]}},"inject-imports-dependencies":{"plugin":{"name":"inject-imports-dependencies","config":{}},"logger":{"_msgs":[]}}}},"name":"klabin-sso-security-report","version":"1.0.0","allFiles":["package.json"],"copiedFiles":["package.json"]},"@apollo/react-hooks@3.1.3":{"id":"@apollo/react-hooks@3.1.3","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"@apollo/react-hooks","version":"3.1.3"},"@apollo/react-common@3.1.3":{"id":"@apollo/react-common@3.1.3","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"@apollo/react-common","version":"3.1.3"},"ts-invariant@0.4.4":{"id":"ts-invariant@0.4.4","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"ts-invariant","version":"0.4.4"},"tslib@1.10.0":{"id":"tslib@1.10.0","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"tslib","version":"1.10.0"},"@wry/equality@0.1.9":{"id":"@wry/equality@0.1.9","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"@wry/equality","version":"0.1.9"},"apollo-boost@0.4.4":{"id":"apollo-boost@0.4.4","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"apollo-boost","version":"0.4.4"},"apollo-cache@1.3.2":{"id":"apollo-cache@1.3.2","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"apollo-cache","version":"1.3.2"},"apollo-utilities@1.3.2":{"id":"apollo-utilities@1.3.2","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"apollo-utilities","version":"1.3.2"},"fast-json-stable-stringify@2.0.0":{"id":"fast-json-stable-stringify@2.0.0","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"fast-json-stable-stringify","version":"2.0.0"},"apollo-cache-inmemory@1.6.3":{"id":"apollo-cache-inmemory@1.6.3","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"apollo-cache-inmemory","version":"1.6.3"},"optimism@0.10.3":{"id":"optimism@0.10.3","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"optimism","version":"0.10.3"},"@wry/context@0.4.4":{"id":"@wry/context@0.4.4","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"@wry/context","version":"0.4.4"},"@types/node@12.12.14":{"id":"@types/node@12.12.14","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"@types/node","version":"12.12.14"},"apollo-client@2.6.4":{"id":"apollo-client@2.6.4","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"apollo-client","version":"2.6.4"},"@types/zen-observable@0.8.0":{"id":"@types/zen-observable@0.8.0","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"@types/zen-observable","version":"0.8.0"},"apollo-link@1.2.13":{"id":"apollo-link@1.2.13","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"apollo-link","version":"1.2.13"},"zen-observable-ts@0.8.20":{"id":"zen-observable-ts@0.8.20","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"zen-observable-ts","version":"0.8.20"},"zen-observable@0.8.15":{"id":"zen-observable@0.8.15","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"zen-observable","version":"0.8.15"},"symbol-observable@1.2.0":{"id":"symbol-observable@1.2.0","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"symbol-observable","version":"1.2.0"},"apollo-link-error@1.1.12":{"id":"apollo-link-error@1.1.12","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"apollo-link-error","version":"1.1.12"},"apollo-link-http-common@0.2.15":{"id":"apollo-link-http-common@0.2.15","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"apollo-link-http-common","version":"0.2.15"},"apollo-link-http@1.5.16":{"id":"apollo-link-http@1.5.16","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"apollo-link-http","version":"1.5.16"},"graphql-tag@2.10.1":{"id":"graphql-tag@2.10.1","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"graphql-tag","version":"2.10.1"},"apollo-link-context@1.0.19":{"id":"apollo-link-context@1.0.19","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"apollo-link-context","version":"1.0.19"},"react-apollo@3.1.3":{"id":"react-apollo@3.1.3","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"react-apollo","version":"3.1.3"},"@apollo/react-components@3.1.3":{"id":"@apollo/react-components@3.1.3","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"@apollo/react-components","version":"3.1.3"},"prop-types@15.7.2":{"id":"prop-types@15.7.2","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"prop-types","version":"15.7.2"},"loose-envify@1.4.0":{"id":"loose-envify@1.4.0","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"loose-envify","version":"1.4.0"},"js-tokens@4.0.0":{"id":"js-tokens@4.0.0","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"js-tokens","version":"4.0.0"},"object-assign@4.1.1":{"id":"object-assign@4.1.1","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"object-assign","version":"4.1.1"},"react-is@16.12.0":{"id":"react-is@16.12.0","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"react-is","version":"16.12.0"},"@apollo/react-hoc@3.1.3":{"id":"@apollo/react-hoc@3.1.3","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"@apollo/react-hoc","version":"3.1.3"},"hoist-non-react-statics@3.3.1":{"id":"hoist-non-react-statics@3.3.1","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"hoist-non-react-statics","version":"3.3.1"},"@apollo/react-ssr@3.1.3":{"id":"@apollo/react-ssr@3.1.3","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"@apollo/react-ssr","version":"3.1.3"},"dotenv@6.2.0":{"id":"dotenv@6.2.0","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"dotenv","version":"6.2.0"},"graphql@14.5.8":{"id":"graphql@14.5.8","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"graphql","version":"14.5.8"},"iterall@1.2.2":{"id":"iterall@1.2.2","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"iterall","version":"1.2.2"},"react@16.8.6":{"id":"react@16.8.6","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"react","version":"16.8.6"},"scheduler@0.13.6":{"id":"scheduler@0.13.6","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"scheduler","version":"0.13.6"},"react-dom@16.8.6":{"id":"react-dom@16.8.6","process":{"copy":{},"pre":{},"babel":{"config":{},"files":{}},"post":{}},"name":"react-dom","version":"16.8.6"}},"_rules":{"config":[],"files":{}},"_warnings":["This report is from an incremental build: some steps may be missing (you may remove the output directory to force a full build)."],"_executionTime":[0,623344030]}
+				</script>
+				<script>
+					window.report = JSON.parse(
+						document.getElementById("report").innerHTML
+					);
+				</script>
+				<script>
+					window.onload = function() {
+						var style = document.createElement('style');
+
+						style.innerHTML = '';
+
+						document.head.appendChild(style);
+
+						var select = document.getElementById('log-level-select');
+
+						select.value = 'info';
+
+						select.onchange = function() {
+							switch(select.value) {
+								case 'info':
+									style.innerHTML = '';
+									break;
+
+								case 'warn':
+									style.innerHTML = 
+										'tr.info {display: none;}';
+									break;
+
+								case 'error':
+									style.innerHTML = 
+										'tr.info {display: none;} ' +
+										'tr.warn {display: none;}';
+									break;
+							}
+						};
+					}
+				</script>
+			</head>
+			<body>
+				<div id='log-level-selector'>
+					Log level filter: 
+					<select id='log-level-select'>
+						<option>info</option>
+						<option>warn</option>
+						<option>error</option>
+					</select>
+				</div>
+				
+				<h1>Report of liferay-npm-bundler execution</h1>
+				
+			<table>
+				<tr class=""><td>Executed at:</td><td>Fri, 29 Nov 2019 15:51:17 GMT</td></tr>
+<tr class=""><td>Execution took:</td><td>623ms</td></tr>
+			</table>
+		
+				
+		<h2>Warnings</h2>
+		
+		<ul>
+			<li>This report is from an incremental build: some steps may be missing (you may remove the output directory to force a full build).</li>
+		</ul>
+	
+	
+				
+		<h2>Bundler environment versions</h2>
+		
+			<table>
+				<tr class=""><th>Package</th>
+<th>Version</th></tr>
+				<tr class="">
+					<td>liferay-npm-bundler</td>
+					<td>2.16.0</td>
+				</tr>
+<tr class="">
+					<td>liferay-npm-build-tools-common</td>
+					<td>2.16.0</td>
+				</tr>
+<tr class="">
+					<td>liferay-npm-bundler-plugin-resolve-linked-dependencies</td>
+					<td>2.16.0</td>
+				</tr>
+<tr class="">
+					<td>liferay-npm-bundler-plugin-namespace-packages</td>
+					<td>2.16.0</td>
+				</tr>
+<tr class="">
+					<td>liferay-npm-bundler-plugin-inject-imports-dependencies</td>
+					<td>2.16.0</td>
+				</tr>
+<tr class="">
+					<td>babel-preset-liferay-standard</td>
+					<td>2.16.0</td>
+				</tr>
+<tr class="">
+					<td>liferay-npm-bundler-plugin-replace-browser-modules</td>
+					<td>2.16.0</td>
+				</tr>
+<tr class="">
+					<td>liferay-npm-bundler-plugin-inject-peer-dependencies</td>
+					<td>2.16.0</td>
+				</tr>
+			</table>
+		
+	
+				
+		<h2>Bundled packages</h2>
+		
+			<table>
+				<tr class=""><th>Package</th>
+<th>Version</th>
+<th>Copied files</th>
+<th>Excluded files</th>
+<th>Linked to</th></tr>
+				<tr class="">
+						<td>klabin-sso-security-report</td>
+						<td>1.0.0</td>
+						<td><div title="package.json">
+									1
+								</div></td>
+						<td>
+							<div title="">
+										0
+									</div>
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>@apollo/react-common</td>
+						<td>3.1.3</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>@apollo/react-components</td>
+						<td>3.1.3</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>@apollo/react-hoc</td>
+						<td>3.1.3</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>@apollo/react-hooks</td>
+						<td>3.1.3</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>@apollo/react-ssr</td>
+						<td>3.1.3</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>@types/node</td>
+						<td>12.12.14</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>@types/zen-observable</td>
+						<td>0.8.0</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>@wry/context</td>
+						<td>0.4.4</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>@wry/equality</td>
+						<td>0.1.9</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>apollo-boost</td>
+						<td>0.4.4</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>apollo-cache-inmemory</td>
+						<td>1.6.3</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>apollo-cache</td>
+						<td>1.3.2</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>apollo-client</td>
+						<td>2.6.4</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>apollo-link-context</td>
+						<td>1.0.19</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>apollo-link-error</td>
+						<td>1.1.12</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>apollo-link-http-common</td>
+						<td>0.2.15</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>apollo-link-http</td>
+						<td>1.5.16</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>apollo-link</td>
+						<td>1.2.13</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>apollo-utilities</td>
+						<td>1.3.2</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>dotenv</td>
+						<td>6.2.0</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>fast-json-stable-stringify</td>
+						<td>2.0.0</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>graphql-tag</td>
+						<td>2.10.1</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>graphql</td>
+						<td>14.5.8</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>hoist-non-react-statics</td>
+						<td>3.3.1</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>iterall</td>
+						<td>1.2.2</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>js-tokens</td>
+						<td>4.0.0</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>loose-envify</td>
+						<td>1.4.0</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>object-assign</td>
+						<td>4.1.1</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>optimism</td>
+						<td>0.10.3</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>prop-types</td>
+						<td>15.7.2</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>react-apollo</td>
+						<td>3.1.3</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>react-dom</td>
+						<td>16.8.6</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>react-is</td>
+						<td>16.12.0</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>react</td>
+						<td>16.8.6</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>scheduler</td>
+						<td>0.13.6</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>symbol-observable</td>
+						<td>1.2.0</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>ts-invariant</td>
+						<td>0.4.4</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>tslib</td>
+						<td>1.10.0</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>zen-observable-ts</td>
+						<td>0.8.20</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+<tr class="">
+						<td>zen-observable</td>
+						<td>0.8.15</td>
+						<td></td>
+						<td>
+							
+						</td>
+						<td></td>
+					</tr>
+			</table>
+		
+	
+				
+		<h2>Details of rule executions</h2>
+		
+		<div class="configuration">
+			<div>Configuration</div>
+			<pre>[]</pre>
+		</div>
+		
+
+			<table>
+				<tr class=""><th>File</th>
+<th>Log source</th>
+<th>Message</th>
+<th></th>
+<th></th></tr>
+				
+			</table>
+		
+	
+				
+						
+		<h2>Summary of package transformations</h2>
+		
+			<table>
+				<tr class=""><th>Package</th>
+<th>Version</th>
+<th>Copy phase</th>
+<th>Pre-babel phase</th>
+<th>Babel phase</th>
+<th>Post-babel phase</th></tr>
+				<tr class="">
+						<td>klabin-sso-security-report</td>
+						<td>1.0.0</td>
+						<td>
+							<a href="#/-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#/-bundler">
+								1 plugins applied
+							</a>
+						</td>
+						<td>
+							<a href="#/-babel">
+								9 files processed
+							</a>
+						</td>
+						<td>
+							<a href="#/-bundler">
+								2 plugins applied
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>@apollo/react-common</td>
+						<td>3.1.3</td>
+						<td>
+							<a href="#@apollo/react-common@3.1.3-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@apollo/react-common@3.1.3-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@apollo/react-common@3.1.3-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@apollo/react-common@3.1.3-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>@apollo/react-components</td>
+						<td>3.1.3</td>
+						<td>
+							<a href="#@apollo/react-components@3.1.3-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@apollo/react-components@3.1.3-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@apollo/react-components@3.1.3-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@apollo/react-components@3.1.3-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>@apollo/react-hoc</td>
+						<td>3.1.3</td>
+						<td>
+							<a href="#@apollo/react-hoc@3.1.3-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@apollo/react-hoc@3.1.3-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@apollo/react-hoc@3.1.3-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@apollo/react-hoc@3.1.3-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>@apollo/react-hooks</td>
+						<td>3.1.3</td>
+						<td>
+							<a href="#@apollo/react-hooks@3.1.3-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@apollo/react-hooks@3.1.3-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@apollo/react-hooks@3.1.3-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@apollo/react-hooks@3.1.3-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>@apollo/react-ssr</td>
+						<td>3.1.3</td>
+						<td>
+							<a href="#@apollo/react-ssr@3.1.3-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@apollo/react-ssr@3.1.3-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@apollo/react-ssr@3.1.3-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@apollo/react-ssr@3.1.3-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>@types/node</td>
+						<td>12.12.14</td>
+						<td>
+							<a href="#@types/node@12.12.14-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@types/node@12.12.14-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@types/node@12.12.14-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@types/node@12.12.14-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>@types/zen-observable</td>
+						<td>0.8.0</td>
+						<td>
+							<a href="#@types/zen-observable@0.8.0-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@types/zen-observable@0.8.0-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@types/zen-observable@0.8.0-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@types/zen-observable@0.8.0-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>@wry/context</td>
+						<td>0.4.4</td>
+						<td>
+							<a href="#@wry/context@0.4.4-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@wry/context@0.4.4-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@wry/context@0.4.4-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@wry/context@0.4.4-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>@wry/equality</td>
+						<td>0.1.9</td>
+						<td>
+							<a href="#@wry/equality@0.1.9-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@wry/equality@0.1.9-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@wry/equality@0.1.9-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#@wry/equality@0.1.9-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>apollo-boost</td>
+						<td>0.4.4</td>
+						<td>
+							<a href="#apollo-boost@0.4.4-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-boost@0.4.4-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-boost@0.4.4-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-boost@0.4.4-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>apollo-cache-inmemory</td>
+						<td>1.6.3</td>
+						<td>
+							<a href="#apollo-cache-inmemory@1.6.3-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-cache-inmemory@1.6.3-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-cache-inmemory@1.6.3-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-cache-inmemory@1.6.3-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>apollo-cache</td>
+						<td>1.3.2</td>
+						<td>
+							<a href="#apollo-cache@1.3.2-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-cache@1.3.2-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-cache@1.3.2-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-cache@1.3.2-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>apollo-client</td>
+						<td>2.6.4</td>
+						<td>
+							<a href="#apollo-client@2.6.4-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-client@2.6.4-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-client@2.6.4-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-client@2.6.4-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>apollo-link-context</td>
+						<td>1.0.19</td>
+						<td>
+							<a href="#apollo-link-context@1.0.19-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-link-context@1.0.19-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-link-context@1.0.19-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-link-context@1.0.19-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>apollo-link-error</td>
+						<td>1.1.12</td>
+						<td>
+							<a href="#apollo-link-error@1.1.12-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-link-error@1.1.12-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-link-error@1.1.12-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-link-error@1.1.12-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>apollo-link-http-common</td>
+						<td>0.2.15</td>
+						<td>
+							<a href="#apollo-link-http-common@0.2.15-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-link-http-common@0.2.15-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-link-http-common@0.2.15-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-link-http-common@0.2.15-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>apollo-link-http</td>
+						<td>1.5.16</td>
+						<td>
+							<a href="#apollo-link-http@1.5.16-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-link-http@1.5.16-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-link-http@1.5.16-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-link-http@1.5.16-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>apollo-link</td>
+						<td>1.2.13</td>
+						<td>
+							<a href="#apollo-link@1.2.13-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-link@1.2.13-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-link@1.2.13-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-link@1.2.13-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>apollo-utilities</td>
+						<td>1.3.2</td>
+						<td>
+							<a href="#apollo-utilities@1.3.2-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-utilities@1.3.2-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-utilities@1.3.2-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#apollo-utilities@1.3.2-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>dotenv</td>
+						<td>6.2.0</td>
+						<td>
+							<a href="#dotenv@6.2.0-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#dotenv@6.2.0-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#dotenv@6.2.0-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#dotenv@6.2.0-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>fast-json-stable-stringify</td>
+						<td>2.0.0</td>
+						<td>
+							<a href="#fast-json-stable-stringify@2.0.0-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#fast-json-stable-stringify@2.0.0-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#fast-json-stable-stringify@2.0.0-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#fast-json-stable-stringify@2.0.0-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>graphql-tag</td>
+						<td>2.10.1</td>
+						<td>
+							<a href="#graphql-tag@2.10.1-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#graphql-tag@2.10.1-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#graphql-tag@2.10.1-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#graphql-tag@2.10.1-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>graphql</td>
+						<td>14.5.8</td>
+						<td>
+							<a href="#graphql@14.5.8-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#graphql@14.5.8-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#graphql@14.5.8-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#graphql@14.5.8-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>hoist-non-react-statics</td>
+						<td>3.3.1</td>
+						<td>
+							<a href="#hoist-non-react-statics@3.3.1-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#hoist-non-react-statics@3.3.1-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#hoist-non-react-statics@3.3.1-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#hoist-non-react-statics@3.3.1-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>iterall</td>
+						<td>1.2.2</td>
+						<td>
+							<a href="#iterall@1.2.2-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#iterall@1.2.2-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#iterall@1.2.2-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#iterall@1.2.2-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>js-tokens</td>
+						<td>4.0.0</td>
+						<td>
+							<a href="#js-tokens@4.0.0-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#js-tokens@4.0.0-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#js-tokens@4.0.0-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#js-tokens@4.0.0-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>loose-envify</td>
+						<td>1.4.0</td>
+						<td>
+							<a href="#loose-envify@1.4.0-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#loose-envify@1.4.0-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#loose-envify@1.4.0-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#loose-envify@1.4.0-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>object-assign</td>
+						<td>4.1.1</td>
+						<td>
+							<a href="#object-assign@4.1.1-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#object-assign@4.1.1-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#object-assign@4.1.1-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#object-assign@4.1.1-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>optimism</td>
+						<td>0.10.3</td>
+						<td>
+							<a href="#optimism@0.10.3-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#optimism@0.10.3-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#optimism@0.10.3-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#optimism@0.10.3-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>prop-types</td>
+						<td>15.7.2</td>
+						<td>
+							<a href="#prop-types@15.7.2-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#prop-types@15.7.2-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#prop-types@15.7.2-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#prop-types@15.7.2-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>react-apollo</td>
+						<td>3.1.3</td>
+						<td>
+							<a href="#react-apollo@3.1.3-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#react-apollo@3.1.3-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#react-apollo@3.1.3-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#react-apollo@3.1.3-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>react-dom</td>
+						<td>16.8.6</td>
+						<td>
+							<a href="#react-dom@16.8.6-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#react-dom@16.8.6-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#react-dom@16.8.6-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#react-dom@16.8.6-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>react-is</td>
+						<td>16.12.0</td>
+						<td>
+							<a href="#react-is@16.12.0-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#react-is@16.12.0-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#react-is@16.12.0-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#react-is@16.12.0-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>react</td>
+						<td>16.8.6</td>
+						<td>
+							<a href="#react@16.8.6-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#react@16.8.6-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#react@16.8.6-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#react@16.8.6-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>scheduler</td>
+						<td>0.13.6</td>
+						<td>
+							<a href="#scheduler@0.13.6-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#scheduler@0.13.6-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#scheduler@0.13.6-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#scheduler@0.13.6-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>symbol-observable</td>
+						<td>1.2.0</td>
+						<td>
+							<a href="#symbol-observable@1.2.0-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#symbol-observable@1.2.0-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#symbol-observable@1.2.0-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#symbol-observable@1.2.0-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>ts-invariant</td>
+						<td>0.4.4</td>
+						<td>
+							<a href="#ts-invariant@0.4.4-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#ts-invariant@0.4.4-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#ts-invariant@0.4.4-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#ts-invariant@0.4.4-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>tslib</td>
+						<td>1.10.0</td>
+						<td>
+							<a href="#tslib@1.10.0-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#tslib@1.10.0-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#tslib@1.10.0-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#tslib@1.10.0-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>zen-observable-ts</td>
+						<td>0.8.20</td>
+						<td>
+							<a href="#zen-observable-ts@0.8.20-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#zen-observable-ts@0.8.20-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#zen-observable-ts@0.8.20-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#zen-observable-ts@0.8.20-bundler">
+								
+							</a>
+						</td>
+					</tr>
+<tr class="">
+						<td>zen-observable</td>
+						<td>0.8.15</td>
+						<td>
+							<a href="#zen-observable@0.8.15-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#zen-observable@0.8.15-bundler">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#zen-observable@0.8.15-babel">
+								
+							</a>
+						</td>
+						<td>
+							<a href="#zen-observable@0.8.15-bundler">
+								
+							</a>
+						</td>
+					</tr>
+			</table>
+		
+	
+						
+		<h2>Details of bundler transformations</h2>
+		
+		<h3>
+							<a name="/-bundler">
+								klabin-sso-security-report@1.0.0
+							</a>
+						</h3>
+		
+			<table>
+				<tr class=""><th>Pre-phase plugin</th>
+<th>Config</th>
+<th>Message</th>
+<th></th>
+<th></th></tr>
+				<tr class="">
+					<td>resolve-linked-dependencies</td> <td>{}</td>
+					
+					<td></td> <td></td>
+				</tr>
+			</table>
+		
+
+			<table>
+				<tr class=""><th>Post-phase plugin</th>
+<th>Config</th>
+<th>Message</th>
+<th></th>
+<th></th></tr>
+				<tr class="">
+					<td>inject-imports-dependencies</td> <td>{}</td>
+					
+					<td></td> <td></td>
+				</tr>
+			</table>
+		
+
+			<table>
+				<tr class=""><th>Post-phase plugin</th>
+<th>Config</th>
+<th>Message</th>
+<th></th>
+<th></th></tr>
+				<tr class="info">
+					<td>namespace-packages</td> <td>{}</td>
+					
+					<td class="info">INFO</td>
+					<td></td>
+					<td>Namespaced 12 dependencies</td>
+				</tr>
+			</table>
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+						
+		<h2>Details of Babel transformations</h2>
+		
+		<h3>
+						<a name="/-babel">
+							klabin-sso-security-report@1.0.0
+						</a>
+						</h3>
+		
+						<div class="configuration">
+							<div>Configuration</div>
+							<pre>{
+  "presets": [
+    "liferay-standard"
+  ],
+  "babelrc": false,
+  "compact": false,
+  "only": "**/*",
+  "sourceMaps": true
+}</pre>
+						</div>
+						
+
+			<table>
+				<tr class=""><th>File</th>
+<th>Log source</th>
+<th>Message</th>
+<th></th>
+<th></th></tr>
+				<tr class="info">
+					<td>AppComponent.js</td>
+					<td class="source">add-module-metadata</td>
+					<td class="info">INFO</td>
+					<td></td>
+					<td>Added 'esModule' flag</td>
+				</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">normalize-requires</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Normalized 5 requires</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">wrap-modules-amd</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Detected dependencies: 'klabin-sso-security-report$react', 'klabin-sso-security-report$react-dom', './client', '@klabin-sso-security-report$apollo/react-hooks', './ksso-form/components/KSSOController'</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">name-amd-modules</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Set module name to 'klabin-sso-security-report@1.0.0/AppComponent'</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">namespace-modules</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Namespaced 0 define() names, 0 define() dependencies, and 3 require() names</td>
+					</tr>
+<tr class="info">
+					<td>client.js</td>
+					<td class="source">add-module-metadata</td>
+					<td class="info">INFO</td>
+					<td></td>
+					<td>Added 'esModule' flag</td>
+				</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">normalize-requires</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Normalized 3 requires</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">wrap-modules-amd</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Detected dependencies: 'klabin-sso-security-report$apollo-boost', 'klabin-sso-security-report$apollo-link-context', 'klabin-sso-security-report$apollo-link-http'</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">name-amd-modules</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Set module name to 'klabin-sso-security-report@1.0.0/client'</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">namespace-modules</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Namespaced 0 define() names, 0 define() dependencies, and 3 require() names</td>
+					</tr>
+<tr class="info">
+					<td>index.js</td>
+					<td class="source">add-module-metadata</td>
+					<td class="info">INFO</td>
+					<td></td>
+					<td>Added 'esModule' flag</td>
+				</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">normalize-requires</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Normalized 3 requires</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">wrap-modules-amd</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Detected dependencies: 'klabin-sso-security-report$react', 'klabin-sso-security-report$react-dom', './AppComponent'</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">name-amd-modules</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Set module name to 'klabin-sso-security-report@1.0.0/index'</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">namespace-modules</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Namespaced 0 define() names, 0 define() dependencies, and 2 require() names</td>
+					</tr>
+<tr class="info">
+					<td>ksso-form/components/KSSOContentForm.js</td>
+					<td class="source">add-module-metadata</td>
+					<td class="info">INFO</td>
+					<td></td>
+					<td>Added 'esModule' flag</td>
+				</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">normalize-requires</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Normalized 4 requires</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">wrap-modules-amd</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Detected dependencies: 'klabin-sso-security-report$react', 'klabin-sso-security-report$react-apollo', './KSSOFormField', '../queries/KSSOFormMutations'</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">name-amd-modules</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Set module name to 'klabin-sso-security-report@1.0.0/ksso-form/components/KSSOContentForm'</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">namespace-modules</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Namespaced 0 define() names, 0 define() dependencies, and 2 require() names</td>
+					</tr>
+<tr class="info">
+					<td>ksso-form/components/KSSOController.js</td>
+					<td class="source">add-module-metadata</td>
+					<td class="info">INFO</td>
+					<td></td>
+					<td>Added 'esModule' flag</td>
+				</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">normalize-requires</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Normalized 5 requires</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">wrap-modules-amd</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Detected dependencies: 'klabin-sso-security-report$react', '@klabin-sso-security-report$apollo/react-hooks', './KSSOContentForm', './KSSOStructureSelector', '../queries/KSSOFormQueries'</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">name-amd-modules</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Set module name to 'klabin-sso-security-report@1.0.0/ksso-form/components/KSSOController'</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">namespace-modules</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Namespaced 0 define() names, 0 define() dependencies, and 2 require() names</td>
+					</tr>
+<tr class="info">
+					<td>ksso-form/components/KSSOFormField.js</td>
+					<td class="source">add-module-metadata</td>
+					<td class="info">INFO</td>
+					<td></td>
+					<td>Added 'esModule' flag</td>
+				</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">normalize-requires</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Normalized 1 requires</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">wrap-modules-amd</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Detected dependencies: 'klabin-sso-security-report$react'</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">name-amd-modules</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Set module name to 'klabin-sso-security-report@1.0.0/ksso-form/components/KSSOFormField'</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">namespace-modules</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Namespaced 0 define() names, 0 define() dependencies, and 1 require() names</td>
+					</tr>
+<tr class="info">
+					<td>ksso-form/components/KSSOStructureSelector.js</td>
+					<td class="source">add-module-metadata</td>
+					<td class="info">INFO</td>
+					<td></td>
+					<td>Added 'esModule' flag</td>
+				</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">normalize-requires</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Normalized 1 requires</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">wrap-modules-amd</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Detected dependencies: 'klabin-sso-security-report$react'</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">name-amd-modules</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Set module name to 'klabin-sso-security-report@1.0.0/ksso-form/components/KSSOStructureSelector'</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">namespace-modules</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Namespaced 0 define() names, 0 define() dependencies, and 1 require() names</td>
+					</tr>
+<tr class="info">
+					<td>ksso-form/queries/KSSOFormMutations.js</td>
+					<td class="source">add-module-metadata</td>
+					<td class="info">INFO</td>
+					<td></td>
+					<td>Added 'esModule' flag</td>
+				</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">normalize-requires</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Normalized 1 requires</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">wrap-modules-amd</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Detected dependencies: 'klabin-sso-security-report$graphql-tag'</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">name-amd-modules</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Set module name to 'klabin-sso-security-report@1.0.0/ksso-form/queries/KSSOFormMutations'</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">namespace-modules</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Namespaced 0 define() names, 0 define() dependencies, and 1 require() names</td>
+					</tr>
+<tr class="info">
+					<td>ksso-form/queries/KSSOFormQueries.js</td>
+					<td class="source">add-module-metadata</td>
+					<td class="info">INFO</td>
+					<td></td>
+					<td>Added 'esModule' flag</td>
+				</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">normalize-requires</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Normalized 1 requires</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">wrap-modules-amd</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Detected dependencies: 'klabin-sso-security-report$graphql-tag'</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">name-amd-modules</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Set module name to 'klabin-sso-security-report@1.0.0/ksso-form/queries/KSSOFormQueries'</td>
+					</tr>
+<tr class="info">
+						<td></td>
+						<td class="source">namespace-modules</td>
+						<td class="info">
+							INFO
+						</td>
+						<td></td>
+						<td>Namespaced 0 define() names, 0 define() dependencies, and 1 require() names</td>
+					</tr>
+			</table>
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+					
+			</body>
+		</html>
+	
