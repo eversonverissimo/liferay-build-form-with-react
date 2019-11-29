@@ -2,28 +2,6 @@ import { ApolloClient, InMemoryCache } from "apollo-boost";
 import { setContext } from "apollo-link-context";
 import { createHttpLink } from "apollo-link-http";
 
-/*
-const client = new ApolloClient({
-	addTypename: true,
-	cache: new InMemoryCache(),
-	defaultOptions: {
-		watchQuery: {
-			notifyOnNetworkStatusChange: true
-		}
-	},
-	link: HttpLink.from([
-		//stateLink,
-		new HttpLink({
-      credentials: 'same-origin',
-      
-			//fetch: fetchWithGroupId,
-			uri: 'http://localhost:8080/o/graphql'
-		})
-	])
-});
-export default client;
-*/
-
 const httpLink = createHttpLink({
   uri: 'http://localhost:8080//o/graphql',
 });

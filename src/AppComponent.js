@@ -9,7 +9,7 @@ export default class extends React.Component {
 		return (
 			<ApolloProvider client={client}>
 				<div className="App">
-					<span>Teste</span>
+					<span>Building CRUD from Liferay's React API</span>
 					<KSSOController />
 				</div>
 			</ApolloProvider>
